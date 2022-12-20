@@ -40,7 +40,7 @@ function addGamesToPage(games) {
         // about each game
         // TIP: if your images are not displaying, make sure there is space
         // between the end of the src attribute and the end of the tag ("/>")
-        const game = games[i]
+        const game = games[i];
         div.innerHTML = `
             <img class='game-img' src=${game.img} alt=${game.name}/>
             <h3>${game.name}</h3>
@@ -67,21 +67,21 @@ addGamesToPage(GAMES_JSON)
 const contributionsCard = document.getElementById("num-contributions");
 
 // use reduce() to count the number of total contributions by summing the backers
-const totalContributions = GAMES_JSON.reduce((acc, game) => acc + game.backers, 0)
+const totalContributions = GAMES_JSON.reduce((acc, game) => acc + game.backers, 0);
 
 // set the inner HTML using a template literal and toLocaleString to get a number with commas
 contributionsCard.innerHTML = `${totalContributions.toLocaleString('en-US')}`;
 
 // grab the amount raised card, then use reduce() to find the total amount raised
 const raisedCard = document.getElementById("total-raised");
-const totalRaised = GAMES_JSON.reduce((acc, game) => acc + game.pledged, 0)
+const totalRaised = GAMES_JSON.reduce((acc, game) => acc + game.pledged, 0);
 
 // set inner HTML using template literal
 raisedCard.innerHTML = `$${totalRaised.toLocaleString('en-US')}`
 
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
-gamesCard.innerHTML = `${GAMES_JSON.length}`
+gamesCard.innerHTML = `${GAMES_JSON.length}`;
 
 /*************************************************************************************
  * Challenge 5: Add functions to filter the funded and unfunded games
@@ -146,7 +146,7 @@ const displayStr = `A total of $${totalRaised.toLocaleString('en-US')} has been 
 // create a new DOM element containing the template string and append it to the description container
 const p = document.createElement('p');
 p.innerHTML = displayStr;
-document.getElementById('description-container').append(p)
+descriptionContainer.append(p);
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
  * Skills used: spread operator, destructuring, template literals, sort 
@@ -164,7 +164,7 @@ const [firstGame, secondGame] = sortedGames;
 // create a new element to hold the name of the top pledge game, then append it to the correct element
 const firstGameName = document.createElement('p');
 firstGameName.innerHTML = firstGame.name;
-firstGameContainer.append(firstGameName)
+firstGameContainer.append(firstGameName);
 // do the same for the runner up item
 const secondGameName = document.createElement('p');
 secondGameName.innerHTML = secondGame.name;
