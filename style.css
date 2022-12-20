@@ -59,11 +59,13 @@ body {
     width: 300px;
     text-align: center;
     border-radius: 7px;
+    transition: transform .2s;
 }
 
 .game-card:hover {
     cursor: pointer;
     box-shadow: 0 0 30px lightblue;
+    transform: scale(1.1);
 }
 
 #button-container {
@@ -78,10 +80,27 @@ button {
     border-radius: 7px;
 }
 
+button:hover,
+button:focus {
+    box-shadow: 0 0 10px lightblue;
+}
+
+button:focus {
+    background-color: lightblue;
+}
+
+.search-container {
+    text-align: center;
+}
+
 #search-input {
     font-family: 'Cabin';
     padding: 1%;
     margin: 1%;
     border-radius: 7px;
     width: 20%;
+}
+
+#search-input:focus {
+    box-shadow: 0 0 20px lightblue;
 }
