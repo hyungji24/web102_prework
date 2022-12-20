@@ -155,7 +155,7 @@ document.getElementById('description-container').append(p)
 const firstGameContainer = document.getElementById("first-game");
 const secondGameContainer = document.getElementById("second-game");
 
-const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
+const sortedGames = GAMES_JSON.sort( (item1, item2) => {
     return item2.pledged - item1.pledged;
 });
 
@@ -169,3 +169,18 @@ firstGameContainer.append(firstGameName)
 const secondGameName = document.createElement('p');
 secondGameName.innerHTML = secondGame.name;
 secondGameContainer.append(secondGameName)
+
+// bonus feature
+const filterSearchedOnly = (event) => {
+    const searchText = event.target.value.toLowerCase();
+
+    deleteChildElements(gamesContainer);
+
+    const searchedGames = GAMES_JSON.filter(game => game.name.toLowerCase().includes(searchText));
+
+    addGamesToPage(searchedGames);   
+}
+
+const searchInput = document.getElementById('search-input');
+
+searchInput.addEventListener('input', filterSearchedOnly);
